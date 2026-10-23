@@ -26,7 +26,8 @@ import {
   HelpCircle,
   Mail,
   FileText,
-  Cpu
+  Cpu,
+  Landmark
 } from 'lucide-react';
 
 export type ActivePage = 'workbench' | 'approach' | 'architecture' | 'about' | 'faq' | 'contact' | 'docs';
@@ -225,7 +226,7 @@ export default function App() {
 
     setIsDisbursed(true);
     const timestamp = new Date().toLocaleTimeString('en-IN', { hour12: false }) + ' IST';
-    const txnRef = `TXN-DISB-PNB-${Math.floor(100000 + Math.random() * 900000)}`;
+    const txnRef = `TXN-DISB-${Math.floor(100000 + Math.random() * 900000)}`;
 
     const logEntry: AuditLogEntry = {
       id: `LOG-DISB-${Date.now()}`,
@@ -260,21 +261,21 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans">
-      {/* PNB Corporate Topbar */}
+      {/* Corporate Topbar */}
       <header className="bg-[#7B1113] text-white px-6 py-4 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-4 border-amber-500 no-print">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded bg-white text-[#7B1113] flex items-center justify-center font-black tracking-wider text-lg shadow-sm shrink-0">
-            PNB
+          <div className="w-10 h-10 rounded bg-white text-[#7B1113] flex items-center justify-center shadow-sm shrink-0">
+            <Landmark className="w-6 h-6 text-[#7B1113]" />
           </div>
           <div>
             <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-              punjab national bank
+              Intelligent Lending Platform
               <span className="text-xs bg-amber-400 text-slate-900 font-semibold px-2 py-0.5 rounded tracking-normal">
                 PRE-SALES PROTOTYPE
               </span>
             </h1>
             <p className="text-xs text-amber-100 font-medium tracking-wide">
-              INTELLIGENT LENDING PLATFORM · DATA & AI PRESALES DEMO
+              AI-POWERED LOAN DECISIONING DEMO · GENERIC BANKING INSTITUTION
             </p>
           </div>
         </div>
@@ -372,7 +373,7 @@ export default function App() {
         <div className="flex items-center gap-2">
           <ShieldAlert className="w-4 h-4 text-amber-700 shrink-0" />
           <span>
-            <strong>DEMO ENVIRONMENT · SYNTHETIC DATA & ILLUSTRATIVE RULES:</strong> All credit scores, applicant profiles, policy rules, and bureau responses are completely synthetic and for simulation purposes only. They do not constitute official Punjab National Bank policies or decisions.
+            <strong>DEMO ENVIRONMENT · SYNTHETIC DATA & ILLUSTRATIVE RULES:</strong> All credit scores, applicant profiles, policy rules, and bureau responses are completely synthetic and for simulation purposes only. They do not constitute official bank policies or decisions.
           </span>
         </div>
         <span className="bg-amber-200/70 font-semibold px-2 py-0.5 rounded text-amber-950 uppercase tracking-wider text-[10px]">
@@ -497,7 +498,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="bg-white border-t border-slate-200 px-6 py-3 text-center text-xs text-slate-500 no-print">
-        Punjab National Bank · Intelligent Lending Presales POC
+        Intelligent Lending Platform | AI-Powered Loan Decisioning Demo
       </footer>
     </div>
   );
